@@ -18,7 +18,6 @@ $ curl 'https://is-site-down.vercel.app/api/check?url=https://emacs-china.org/'
   "url": "https://emacs-china.org/",
   "reason": "HEAD request responded with 200"
 }
-
 ```
 
 The CORS is enabled.
