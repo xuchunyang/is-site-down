@@ -1,0 +1,19 @@
+{
+  "name": "is-site-down",
+  "version": "1.0.0",
+  "description": "Is site down?",
+  "main": "none",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuchunyang/is-site-down.git"
+  },
+  "author": "Xu Chunyang",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/xuchunyang/is-site-down/issues"
+  },
+  "homepage": "https://github.com/xuchunyang/is-site-down#readme"
+}
