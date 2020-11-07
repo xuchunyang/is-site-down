@@ -109,9 +109,11 @@
       ></span
     >
     <script>
+      const input = document.querySelector("#url");
+      const output = document.querySelector("#output");
       const url = new URLSearchParams(document.location.search).get("url");
       if (url) {
-        document.querySelector("#url").value = url;
+        input.value = url;
         output.innerHTML = `Checking <a href="${url}">${url}</a> ...`;
         fetch("api/check?url=" + url)
           .then((res) => res.json())
