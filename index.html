@@ -39,6 +39,7 @@
       <label for="url">Enter URL:</label>
       <input
         id="url"
+        name="url"
         type="url"
         required
         placeholder="e.g., https://example.com/"
@@ -47,11 +48,9 @@
     </form>
     <p id="output"></p>
     <script>
-      const input = document.querySelector("input#url");
-      const output = document.querySelector("#output");
-      document.querySelector("form").onsubmit = (e) => {
-        e.preventDefault();
-        const url = input.value;
+      const url = new URLSearchParams(document.location.search).get("url");
+      if (url) {
+        document.querySelector("#url").value = url;
         output.textContent = `Checking ${url} ...`;
         fetch("api/check?url=" + url)
           .then((res) => res.json())
@@ -60,7 +59,7 @@
             if (error) {
               output.textContent = `Error: ${error}`;
             } else if (isDown) {
-              output.innerHTML = `<a href=${url}>${url}</a> is down, ${reason}`;
+              output.innerHTML = `<a href=${url}>${url}</a> seems down, ${reason}`;
             } else {
               output.innerHTML = `<a href=${url}>${url}</a> is up`;
             }
@@ -68,7 +67,7 @@
           .catch((error) => {
             output.textContent = `Error: ${error}`;
           });
-      };
+      }
     </script>
   </body>
 </html>
