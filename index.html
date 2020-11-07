@@ -51,7 +51,7 @@
       const url = new URLSearchParams(document.location.search).get("url");
       if (url) {
         document.querySelector("#url").value = url;
-        output.textContent = `Checking ${url} ...`;
+        output.innerHTML = `Checking <a href="${url}">${url}</a> ...`;
         fetch("api/check?url=" + url)
           .then((res) => res.json())
           .then((json) => {
